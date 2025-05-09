@@ -39,40 +39,63 @@ public class DemoSceneEvent : MonoBehaviour
             OverlayControl.NextDialogue(DialogueSequence.Scene01);
             //OverlayControl.TextDelay = 1500;//revert it back
 
-            if(OverlayControl.ConvoIndex == 2)// when script is on the 2nd sentence
+            if (OverlayControl.ConvoIndex == 1)// when script is on the 1st sentence
             {
-                LeftSideChar.SetActive(true);//show char
+                LeftSideChar.transform.Find("JavierSleepy").gameObject.SetActive(true);
                 RightSideCharReset();
                 RightSideChar.transform.Find("RafaelAngryTalk").gameObject.SetActive(true);
             }
 
-
-            if (OverlayControl.ConvoIndex == 3)// when script is on the 2nd sentence
+            if (OverlayControl.ConvoIndex == 2)// when script is on the 2nd sentence
             {
-                RightSideCharReset();
-                RightSideChar.transform.Find("RafaelNervous").gameObject.SetActive(true);
-            }
-
-            if (OverlayControl.ConvoIndex == 4)// when script is on the 2nd sentence
-            {
+                LeftSideChar.transform.Find("JavierSleepyTalk").gameObject.SetActive(true);
                 RightSideCharReset();
                 RightSideChar.transform.Find("RafaelAngry").gameObject.SetActive(true);
             }
-            if (OverlayControl.ConvoIndex == 5)// when script is on the 2nd sentence
+
+            if (OverlayControl.ConvoIndex == 3)// when script is on the 3rd sentence
+            {
+                LeftSideCharReset();
+                LeftSideChar.transform.Find("JavierNeutral").gameObject.SetActive(true);
+                RightSideCharReset();
+                RightSideChar.transform.Find("RafaelAngryTalk").gameObject.SetActive(true);
+            }
+
+            if (OverlayControl.ConvoIndex == 5)// when script is on the 5th sentence
             {
                 RightSideCharReset();
                 RightSideChar.transform.Find("RafaelPout").gameObject.SetActive(true);
             }
-            if (OverlayControl.ConvoIndex == 6)// when script is on the 2nd sentence
+            if (OverlayControl.ConvoIndex == 6)// when script is on the 6th sentence
             {
                 RightSideCharReset();
                 RightSideChar.transform.Find("RafaelPoutTalk").gameObject.SetActive(true);
             }
-            if (OverlayControl.ConvoIndex == 7)// when script is on the 2nd sentence
+            if (OverlayControl.ConvoIndex == 7)// when script is on the 7th sentence
             {
                 RightSideCharReset();
                 RightSideChar.transform.Find("RafaelSmile").gameObject.SetActive(true);
             }
+            if (OverlayControl.ConvoIndex == 8)
+            {
+                RightSideCharReset();
+                RightSideChar.transform.Find("RafaelNervous").gameObject.SetActive(true);
+            }
+            if (OverlayControl.ConvoIndex == 11)
+            {
+                LeftSideCharReset();
+                LeftSideChar.transform.Find("JavierSeriousTalk").gameObject.SetActive(true);
+                RightSideCharReset();
+                RightSideChar.transform.Find("RafaelPout").gameObject.SetActive(true);
+            }
+            if (OverlayControl.ConvoIndex == 12)
+            {
+                LeftSideCharReset();
+                LeftSideChar.transform.Find("JavierSerious").gameObject.SetActive(true);
+                RightSideCharReset();
+                RightSideChar.transform.Find("RafaelSmile").gameObject.SetActive(true);
+            }
+
         });
 
         Debug.Log("DemoSceneEvent > StartScene Start Music");
@@ -96,6 +119,7 @@ public class DemoSceneEvent : MonoBehaviour
         OverlayControl.TalkingChar.text = "";
         OverlayControl.DialogueText.text = "";
         Debug.Log("DemoSceneEvent > StartDialogue Conversation started...");
+       
         //auto convo started
         await Task.Delay(2000);//wait for 2 sec
         LoadBlocker.SetActive(false);
@@ -129,6 +153,17 @@ public class DemoSceneEvent : MonoBehaviour
         RightSideChar.transform.Find("RafaelPout").gameObject.SetActive(false);
         RightSideChar.transform.Find("RafaelPoutTalk").gameObject.SetActive(false);
         RightSideChar.transform.Find("RafaelSmile").gameObject.SetActive(false);
+    }
+    public void LeftSideCharReset()
+    {
+        LeftSideChar.transform.Find("JavierNeutral").gameObject.SetActive(false);
+        LeftSideChar.transform.Find("JavierNeutralTalk").gameObject.SetActive(false);
+        LeftSideChar.transform.Find("JavierSerious").gameObject.SetActive(false);
+        LeftSideChar.transform.Find("JavierSeriousTalk").gameObject.SetActive(false);
+        LeftSideChar.transform.Find("JavierSleepy").gameObject.SetActive(false);
+        LeftSideChar.transform.Find("JavierSleepyTalk").gameObject.SetActive(false);
+        LeftSideChar.transform.Find("JavierSmile").gameObject.SetActive(false);
+        LeftSideChar.transform.Find("JavierSmileTalk").gameObject.SetActive(false);
     }
 
     /// <summary>
