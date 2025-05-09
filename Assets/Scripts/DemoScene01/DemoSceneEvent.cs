@@ -42,6 +42,36 @@ public class DemoSceneEvent : MonoBehaviour
             if(OverlayControl.ConvoIndex == 2)// when script is on the 2nd sentence
             {
                 LeftSideChar.SetActive(true);//show char
+                RightSideCharReset();
+                RightSideChar.transform.Find("RafaelAngryTalk").gameObject.SetActive(true);
+            }
+
+
+            if (OverlayControl.ConvoIndex == 3)// when script is on the 2nd sentence
+            {
+                RightSideCharReset();
+                RightSideChar.transform.Find("RafaelNervous").gameObject.SetActive(true);
+            }
+
+            if (OverlayControl.ConvoIndex == 4)// when script is on the 2nd sentence
+            {
+                RightSideCharReset();
+                RightSideChar.transform.Find("RafaelAngry").gameObject.SetActive(true);
+            }
+            if (OverlayControl.ConvoIndex == 5)// when script is on the 2nd sentence
+            {
+                RightSideCharReset();
+                RightSideChar.transform.Find("RafaelPout").gameObject.SetActive(true);
+            }
+            if (OverlayControl.ConvoIndex == 6)// when script is on the 2nd sentence
+            {
+                RightSideCharReset();
+                RightSideChar.transform.Find("RafaelPoutTalk").gameObject.SetActive(true);
+            }
+            if (OverlayControl.ConvoIndex == 7)// when script is on the 2nd sentence
+            {
+                RightSideCharReset();
+                RightSideChar.transform.Find("RafaelSmile").gameObject.SetActive(true);
             }
         });
 
@@ -70,6 +100,8 @@ public class DemoSceneEvent : MonoBehaviour
         await Task.Delay(2000);//wait for 2 sec
         LoadBlocker.SetActive(false);
         RightSideChar.SetActive(true);//show char
+        RightSideChar.transform.Find("RafaelAngry").gameObject.SetActive(true);
+
         await OverlayControl.RunDialogue(DialogueSequence.Scene01);//read dialogue
     }
 
@@ -86,6 +118,17 @@ public class DemoSceneEvent : MonoBehaviour
         await OverlayControl.RunDialogue(DialogueSequence.Scene01);
         await Task.Delay(1000);
         await OverlayControl.RunDialogue(DialogueSequence.Scene01);
+    }
+
+
+    public void RightSideCharReset()
+    {
+        RightSideChar.transform.Find("RafaelAngry").gameObject.SetActive(false);
+        RightSideChar.transform.Find("RafaelAngryTalk").gameObject.SetActive(false);
+        RightSideChar.transform.Find("RafaelNervous").gameObject.SetActive(false);
+        RightSideChar.transform.Find("RafaelPout").gameObject.SetActive(false);
+        RightSideChar.transform.Find("RafaelPoutTalk").gameObject.SetActive(false);
+        RightSideChar.transform.Find("RafaelSmile").gameObject.SetActive(false);
     }
 
     /// <summary>

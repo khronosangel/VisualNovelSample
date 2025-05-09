@@ -26,7 +26,7 @@ public class UIOverlayEvents : MonoBehaviour
     public int TextDelay  = 1500;//miliseconds
 
     public int DialogueIndex  = 0;
-    public int ConvoIndex  = 0;
+    public int ConvoIndex  = 0;//most important number to control frame per sentence
     public bool AutoRun = false;
 
     public bool IsInventoryVisible = false;
