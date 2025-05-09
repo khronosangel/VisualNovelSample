@@ -2,3 +2,10 @@
 /Logs
 /.vs
 /.vsconfig
+/obj/Debug
+/Temp
+/Assembly-CSharp.csproj
+/VisualNovelSample.sln
+/.utmp
+/UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+/UserSettings/Layouts/default-6000.dwlt
